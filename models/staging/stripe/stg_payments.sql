@@ -9,7 +9,7 @@ with payments as (
         created as payment_created,
         _batched_at as payment_batched_at
 
-    from dbtworkshop.stripe.payment
+    from {{ source('stripe', 'payment') }}
 )
 
 select * from payments
