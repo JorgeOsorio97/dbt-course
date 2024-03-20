@@ -4,7 +4,7 @@ with payments as (
         id as payment_id,
         orderid AS order_id,
         paymentmethod,
-        amount,
+        amount / 100 as amount, -- values are stored in cents
         status,
         created as payment_created,
         _batched_at as payment_batched_at
